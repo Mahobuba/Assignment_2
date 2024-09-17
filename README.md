@@ -20,7 +20,7 @@ Foodie Delight is a fully responsive landing page designed for exploring and dis
 - JavaScript (ES6)
 
 ### Live Link:
-[Foodie Delight Live](https://your-live-link.com)
+[Foodie Delight Live](http://127.0.0.1:5500/index.html)
 
 ### GitHub Repository:
-[Foodie Delight GitHub Repository](https://github.com/your-username/foodie-delight)
+[Foodie Delight GitHub Repository](https://mahobuba.github.io/Assignment_2)
