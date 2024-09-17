@@ -23,4 +23,5 @@ Foodie Delight is a fully responsive landing page designed for exploring and dis
 http://127.0.0.1:5500/index.html
 
 ### GitHub Repository:
+https://mahobuba.github.io/Assignment_2
 
