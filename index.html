@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Delight - A Food-related Landing Page
+    </title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome kits -->
+    <script src="https://kit.fontawesome.com/071641ee03.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-gray-500 text-white p-2 mb-2">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo and Website Name -->
+            <div class="flex items-center space-x-2">
+                <img src="Resources/logo.png" alt="Logo" class="w-20 h-20">
+                <span class="text-2xl font-bold">Food Delight</span>
+            </div>
+
+            <!-- Food Category Buttons (Hidden on Mobile) -->
+            <div class="hidden md:flex space-x-4">
+                <button class="btn btn-primary category-btn" data-category="Potato">Potato</button>
+                <button class="btn btn-primary category-btn" data-category="Soup">Soup</button>
+                <button class="btn btn-primary category-btn" data-category="Chicken">Chicken</button>
+                <button class="btn btn-primary category-btn" data-category="Beef">Beef</button>
+            </div>
+
+            <!-- Hamburger Menu (Visible on Mobile) -->
+            <div class="md:hidden">
+                <button id="hamburgerButton" class="btn btn-circle btn-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dropdown Menu (Initially Hidden for Mobile) -->
+        <div id="dropdownMenu" class="hidden bg-gray-800 text-white mt-4 p-4 rounded-lg space-y-2 md:hidden">
+            <button class="btn btn-block btn-primary category-btn" data-category="Potato">Potato</button>
+            <button class="btn btn-block btn-primary category-btn" data-category="Soup">Soup</button>
+            <button class="btn btn-block btn-primary category-btn" data-category="Chicken">Chicken</button>
+            <button class="btn btn-block btn-primary category-btn" data-category="Beef">Beef</button>
+        </div>
+    </nav>
+  
+    <!-- Banner start -->
+    <div class="carousel w-full">
+      <!-- Carousel # 1 -->
+      <div id="slide1" class="carousel-item relative w-full">
+        <div class="hero" style="background-image: url(Resources/images/chicken.jpg);">
+          <div class="hero-overlay bg-opacity-60"></div>
+          <div class="hero-content text-neutral-content text-center py-20">
+            <div class="max-w-md">
+              <h1 class="mb-5 text-5xl font-bold">Chicken Handi</h1>
+              <p class="mb-5">
+                Take a large pot or wok, big enough to cook all the chicken, and heat the oil in it. Once the oil is hot, add sliced onion and fry them until deep golden brown. Then take them out on a plate and set aside.\r\nTo the same pot, add the chopped garlic and sauté for a minute.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <a href="#slide4" class="btn btn-circle">❮</a>
+          <a href="#slide2" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+      <!-- Carousel # 2 -->
+      <div id="slide2" class="carousel-item relative w-full">
+        <div class="hero" style="background-image: url(Resources/images/beef.jpg);">
+          <div class="hero-overlay bg-opacity-60"></div>
+          <div class="hero-content text-neutral-content text-center">
+            <div class="max-w-md">
+              <h1 class="mb-5 text-5xl font-bold">Beef Asado</h1>
+              <p class="mb-5">
+                Combine beef, crushed peppercorn, soy sauce, vinegar, dried bay leaves, lemon, and tomato sauce. Mix well. Marinate beef for at least 30 minutes.\r\n1.\tPut the marinated beef in a cooking pot along with remaining marinade.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <a href="#slide1" class="btn btn-circle">❮</a>
+          <a href="#slide3" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+      <!-- Carousel # 3 -->
+      <div id="slide3" class="carousel-item relative w-full">
+        <div class="hero" style="background-image: url(Resources/images/soup.jpg);">
+          <div class="hero-overlay bg-opacity-60"></div>
+          <div class="hero-content text-neutral-content text-center">
+            <div class="max-w-md">
+              <h1 class="mb-5 text-5xl font-bold">Leblebi Soup</h1>
+              <p class="mb-5">
+                Heat the oil in a large pot. Add the onion and cook until translucent.\r\nDrain the soaked chickpeas and add them to the pot together with the vegetable stock. Bring to the boil, then reduce the heat and cover. 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <a href="#slide2" class="btn btn-circle">❮</a>
+          <a href="#slide4" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+    </div>
+    <!-- Banner end -->
+
+
+    <!-- Food Display Section -->
+    <section class="container mx-auto my-8">
+      <div id="foodGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Food items will be dynamically inserted here -->
+      </div>
+  </section>
+
+    
+
+    <!-- FAQ section start -->
+    <section class="p-8 bg-gray-100">
+      <h2 class="text-3xl mb-6">Frequently Asked Questions</h2>
+      <div tabindex="0" class="collapse collapse-arrow">
+        <input type="checkbox">
+        <div class="collapse-title text-xl font-medium">
+          What is Foodie Delight?
+        </div>
+        <div class="collapse-content">
+          <p>Foodie Delight is a platform to explore and enjoy various food dishes.</p>
+        </div>
+      </div>
+      <div tabindex="0" class="collapse collapse-arrow">
+        <input type="checkbox">
+        <div class="collapse-title text-xl font-medium">
+          How do I search for food recipes?
+        </div>
+        <div class="collapse-content">
+          <p>You can browse by category or search directly using the navigation bar.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ section end -->
+
+   <!-- Footer Section -->
+<footer class="bg-gray-500 text-white py-5">
+  <div class="container mx-auto px-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Contact Information -->
+      <div>
+        <h2 class="text-lg font-bold mb-2">Contact Us</h2>
+        <p>Email: <a href="mailto:contact@example.com" class="underline">contact@example.com</a></p>
+        <p>Phone: <a href="tel:+1234567890" class="underline">+123 456 7890</a></p>
+        <p>Address: Dhaka, Bangladesh</p>
+      </div>
+
+      <!-- Important Links -->
+      <div>
+        <h2 class="text-lg font-bold mb-2">Important Links</h2>
+        <ul>
+          <li><a href="#" class="underline hover:text-gray-400">About Us</a></li>
+          <li><a href="#" class="underline hover:text-gray-400">Services</a></li>
+          <li><a href="#" class="underline hover:text-gray-400">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media Links -->
+      <div>
+        <h2 class="text-lg font-bold mb-2">Follow Us</h2>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="border-t border-gray-600 mt-2 pt-2 text-center">
+      <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="scripts.js">
+
+  </script>
+
+</body>
+
+</html>
